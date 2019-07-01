@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  **/
 public class zuulFilter extends com.netflix.zuul.ZuulFilter {
     /**
+     *
      * fileType的返回值类型表示为过滤器的类型，过滤器的类型表示在那个生命周期执行
      * pre,post,error,route,static
      * pre表示的是在路由之前执行
