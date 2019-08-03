@@ -47,6 +47,7 @@ public class zuulFilter extends com.netflix.zuul.ZuulFilter {
      */
     @Override
     public Object run() {
+
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         String login = request.getParameter( "login" );
