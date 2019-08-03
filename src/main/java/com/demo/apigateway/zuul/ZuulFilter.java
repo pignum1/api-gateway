@@ -11,8 +11,9 @@ import javax.servlet.http.HttpServletRequest;
  * @Date 2019/5/28 17:05
  * @Version 1.0
  **/
-public class zuulFilter extends com.netflix.zuul.ZuulFilter {
+public class ZuulFilter extends com.netflix.zuul.ZuulFilter {
     /**
+     *
      * fileType的返回值类型表示为过滤器的类型，过滤器的类型表示在那个生命周期执行
      * pre,post,error,route,static
      * pre表示的是在路由之前执行
@@ -24,7 +25,7 @@ public class zuulFilter extends com.netflix.zuul.ZuulFilter {
     }
 
     /**
-     * 表示过滤去的执行顺序（多个过滤器时有意义）
+     * 表示过滤器的执行顺序（多个过滤器时有意义）
      * @return
      */
     @Override
@@ -55,7 +56,7 @@ public class zuulFilter extends com.netflix.zuul.ZuulFilter {
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(401);
             ctx.addZuulResponseHeader("content-type","text/html;charset=utf-8");
-            ctx.setResponseBody("非法访问");
+            ctx.setResponseBody("无登陆信息");
         }
         return null;
     }
